@@ -5,13 +5,19 @@ variable "instance_count" {
 }
 
 variable "vpc_id" {
-    description = "VPC ID"
-    type = string
-    default = "vpc-0f4ea436a49b06c61"
+  description = "VPC ID"
+  type        = string
+  default     = "vpc-0f4ea436a49b06c61"
 }
 
 variable "web_server_port" {
-    description = "Web server NGINX port"
-    type = number
-    default = 80
+  description = "Web server NGINX port"
+  type        = number
+  default     = 80
+}
+
+variable "name" {
+  description = "Owner name"
+  type        = string
+  default     = "slipchuk"
 }

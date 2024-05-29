@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "{{ web_server_port }}:{{ web_server_port }}"
+    volumes:
+      - /home/ubuntu/default.conf:/etc/nginx/conf.d/default.conf
+    

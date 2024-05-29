@@ -1,0 +1,72 @@
+---
+- name: Install Docker and run Nginx
+  hosts: NGINX
+  become: true
+
+  tasks:
+    - name: Install required packages
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+        update_cache: yes
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+        state: present
+
+    - name: Update apt and install Docker
+      apt:
+        name: docker-ce
+        state: present
+        update_cache: yes
+
+    - name: Install Docker Compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: "0755"
+
+    - name: Create nginx default.conf template
+      template:
+        src: ../templates/default.conf.j2
+        dest: /home/ubuntu/default.conf
+        mode: "0755"
+
+    # - name: Create index.html template
+    #   template:
+    #     src: ../templates/index.html.j2
+    #     dest: /home/ubuntu/index.html
+    #     mode: "0755"
+
+    - name: Create docker-compose.yml file
+      template:
+        src: ../templates/docker-compose.yml.j2
+        dest: /home/ubuntu/docker-compose.yml
+        mode: "0755"
+
+    - name: Pull Nginx Docker image
+      docker_image:
+        name: nginx
+        source: pull
+
+    - name: Stop and remove existing Nginx container
+      shell: |
+        docker-compose down
+      args:
+        chdir: /home/ubuntu/
+      ignore_errors: yes
+
+    - name: Start Nginx container
+      command: docker-compose up -d
+      args:
+        chdir: /home/ubuntu/
