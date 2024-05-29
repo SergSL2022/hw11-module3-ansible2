@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Welcome {{ owner_name }} web server</title>
 </head>
-<body>
-    <h1>Owner of this server is {{ owner_name }}</h1>
-    <p></p>
-    <h2>Server IP address is {{ansible_default_ipv4.address}}</h2>
-     <p></p>
-    <h2>Server host name is {{ansible_hostname}}</h2>
-      <p></p>
-    <h2>Server OS family is {{ansible_os_family}}</h2>
+<body style="background-color: rgb(52, 51, 51); color: #fff">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh">
+      <h1 style="margin-bottom: 30px;">Owner of this server is 
+        <span style="color: orange;">{{ owner_name }}</span>
+      </h1>
+      <h2 style="margin-bottom: 30px;">Server private IP address is
+        <span style="color: orange;">{{ansible_default_ipv4.address}}</span>
+      </h2>
+       <h2 style="margin-bottom: 30px;">Server EC2 type is
+        <span style="color: orange;">{{ansible_product_name}}</span>
+      </h2>
+        <h2 style="margin-bottom: 30px;">Server processor is
+        <span style="color: orange;">{{ansible_processor[2]}}</span>
+      </h2>
+      <h2 style="margin-bottom: 30px;">Server host name is
+        <span style="color: orange;">{{ansible_hostname}}</span>
+      </h2>
+      <h2 style="margin-bottom: 30px;">Server OS family is
+        <span style="color: orange;">{{ansible_os_family}}</span>
+      </h2>
+       <h2 style="margin-bottom: 30px;">Server OS is
+        <span style="color: orange;">{{ansible_lsb.description}}</span>
+      </h2>
+    </div>
 </body>
 </html>

@@ -42,11 +42,11 @@
         dest: /home/ubuntu/default.conf
         mode: "0755"
 
-    # - name: Create index.html template
-    #   template:
-    #     src: ../templates/index.html.j2
-    #     dest: /home/ubuntu/index.html
-    #     mode: "0755"
+    - name: Create index.html template
+      template:
+        src: ../templates/index.html.j2
+        dest: /home/ubuntu/index.html
+        mode: "0755"
 
     - name: Create docker-compose.yml file
       template:

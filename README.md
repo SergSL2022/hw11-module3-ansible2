@@ -32,6 +32,12 @@
 
 
 ### 3. Add custom index page template to ansible where use some variable to control content, pass name value from terraform to ansible.
+![alt text](<screenshots/3/Знімок екрана з 2024-05-29 23-55-28.png>)
+![alt text](<screenshots/3/Знімок екрана з 2024-05-29 23-55-39.png>)
+![alt text](<screenshots/3/Знімок екрана з 2024-05-29 23-57-46.png>)
+![alt text](<screenshots/3/Знімок екрана з 2024-05-29 23-57-53.png>)
+![alt text](<screenshots/3/Знімок екрана з 2024-05-30 00-26-37.png>)
+![alt text](<screenshots/3/Знімок екрана з 2024-05-30 00-28-24.png>)
 
 
 ### 4. Apply ansible playbook from terraform automatically. If you change port in terraform, SG and nginx should be reconfigured to use new value. After change you should be able to open web page at the new specified port.
