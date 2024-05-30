@@ -41,3 +41,13 @@
 
 
 ### 4. Apply ansible playbook from terraform automatically. If you change port in terraform, SG and nginx should be reconfigured to use new value. After change you should be able to open web page at the new specified port.
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-21-07.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-23-39.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-25-48.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-26-28.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-27-40.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-27-50.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-29-11.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-29-46.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-30-23.png>)
+![alt text](<screenshots/4/Знімок екрана з 2024-05-30 05-30-41.png>)
